@@ -4,8 +4,6 @@ import {Soloon} from "../../../src/domain/models/soloon.js";
 import {Cometh} from "../../../src/domain/models/cometh.js";
 import {Space} from "../../../src/domain/models/space.js";
 import {Polyanet} from "../../../src/domain/models/polyanet.js";
-import {Megaverse} from "../../../src/domain/megaverse.js";
-import {MegaverseHttpClient} from "../../../src/http/megaverse-http-client.js";
 
 describe("Test Astral Factories", () => {
     it("Should create a Saloon", () => {
@@ -36,13 +34,5 @@ describe("Test Astral Factories", () => {
         expect(astral instanceof Polyanet).toBe(true);
         expect((astral as Polyanet).row).toBe(1);
         expect((astral as Polyanet).column).toBe(1);
-    })
-})
-
-describe("Test pahse 2", () => {
-    it("Should create the map", async () => {
-        let client = new MegaverseHttpClient("https://challenge.crossmint.io/api", "b0cda8af-d895-4c52-a9a9-6559a2380e80");
-        let meta = new Megaverse(client);
-        await meta.fillPhase2();
     })
 })
